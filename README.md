@@ -53,7 +53,19 @@ opkg install *
 
 ## - `adbyby` `mwan3-pandorabox_2.0-0_all.ipk`
 
-所有资料包都在目录下
+- adbyby ：配置
+
+  - cp 包到 路由器某个目录，解压，
+  - 单独启动： path/to/adbyby
+  - 开机自启： 计划任务中添加一下代码，实现广告插件自启动和全局80端口代理
+  - 同理在 登陆shell中`crontab -e`添加以下也可以
+
+```
+@reboot /mnt/mmcblk0/adbyby/bin/adbyby
+@reboot iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8118
+```
+
+- mwan 多拨：`opkg --force-depends install *` 即可，配置后期添加 所有资料包都在目录下
 
 -- 有问题 可以 跟进issue 留言给我
 
