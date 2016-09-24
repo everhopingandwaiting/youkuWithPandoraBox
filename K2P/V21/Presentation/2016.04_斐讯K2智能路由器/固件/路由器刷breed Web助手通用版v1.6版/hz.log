@@ -1,0 +1,80 @@
+
+
+ÿ?ÿ?ÿ?ÿ?ÿ?
+
+
+
+phicomm.me login: 
+
+
+admin
+Password: 
+
+
+
+
+
+
+
+
+BusyBox v1.12.1 (2016-03-15 14:56:34 CST) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+# 
+
+
+cd /tmp
+# 
+
+
+cat /proc/mtd
+
+
+
+dev:    size   erasesize  name
+mtd0: 00800000 00010000 "ALL"
+mtd1: 00030000 00010000 "Bootloader"
+mtd2: 00010000 00010000 "Config"
+mtd3: 00010000 00010000 "Factory"
+mtd4: 00790000 00010000 "Kernel"
+mtd5: 00010000 00010000 "nvbackup"
+mtd6: 00010000 00010000 "nvram"
+# 
+
+
+wget http://192.168.2.100:806/breed/r849/breed-mt7620-phicomm-psg1208.bin
+
+
+
+Connecting to 192.168.2.100:806 (192.168.2.100:806)
+breed-mt7620-phicomm   0% |                               |     0  --:--:-- ETAbreed-mt7620-phicomm 100% |*******************************| 81828  --:--:-- ETA
+# 
+
+
+mtd_write write breed-mt7620-phicomm-psg1208.bin Bootloader
+
+
+
+Unlocking Bootloader ...
+Writing from breed-mt7620-phicomm-psg1208.bin to Bootloader ...  [ ][e]
+
+
+[w][w]
+
+
+[w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w][w]
+
+
+[w][w][w][w][e]
+
+
+[w][w]
+
+
+[w][w][w][w][w][w][w][w][w][w][w][w][w][w]
+# 
+
+
+mtd write breed-mt7620-phicomm-psg1208.bin Bootloader
+-sh: mtd: not found
+# 
